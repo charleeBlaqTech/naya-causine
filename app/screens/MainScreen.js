@@ -3,6 +3,9 @@ import { StyleSheet,
     SafeAreaView,ImageBackground, View, Button, Image, Text
   } from 'react-native';
 
+
+import colors from "../config/colors"
+
  
 
   
@@ -14,7 +17,7 @@ import { StyleSheet,
 
     return (
         <SafeAreaView style={styles.container}>
-            <ImageBackground style={styles.background} resizeMode='cover' source={{ uri:"https://media.istockphoto.com/id/673294768/photo/blank-logo-sign-cafe-shop-front-display-brick-wall.jpg?b=1&s=170667a&w=0&k=20&c=8n-1VT2qNTKmHAVPjK-Cq4_Q4QxxGFuuk_r_9aNiuOA="}}>
+            <ImageBackground style={styles.background} resizeMode='contain' source={{ uri:"https://media.istockphoto.com/id/673294768/photo/blank-logo-sign-cafe-shop-front-display-brick-wall.jpg?b=1&s=170667a&w=0&k=20&c=8n-1VT2qNTKmHAVPjK-Cq4_Q4QxxGFuuk_r_9aNiuOA="}}>
 
                 <View style={styles.logoImageContainer}>
                     <Image source={{width:100,height:100, uri: 'https://media.istockphoto.com/id/1477464704/photo/food-and-drink-sign.jpg?b=1&s=170667a&w=0&k=20&c=vAaA4iEz7xie4qAsiqIDmoa4YCz-2htdWMjDWSRgdeE='}}/>
@@ -23,6 +26,8 @@ import { StyleSheet,
 
                 <View style={styles.buttonContainerStyle}>
                     <Button style={styles.loginButtonStyle} title="sign in" />
+                </View>
+                <View style={styles.buttonContainerStyle}>
                     <Button style={styles.registerButtonStyle} title="sign up" />
                 </View>
 
@@ -36,25 +41,28 @@ import { StyleSheet,
   const styles = StyleSheet.create({
     container: {
       flex: 1,
+      backgroundColor:colors.black,
     },
     background:{
         flex:1,
         justifyContent: "flex-end",
-        alignItems:"center"
+        alignItems:"center",
+        width:"100%",
+        height:'100%'
     },
     buttonContainerStyle:{
-        width: "100%",
-        paddingBottom:30
+        width: "80%",
+        marginBottom:10
     },
     loginButtonStyle:{
         width: "100%",
-        height: 70,
-        backgroundColor:'#fc5c65'
+        height: "100%",
+        backgroundColor:colors.primary,
     },
     registerButtonStyle:{
         width: "100%",
-        height: 70,
-        backgroundColor:'#4ecdc4'
+        height: "100%",
+        backgroundColor:colors.secondary,
     },
     logoImageContainer:{
         position: "absolute",
@@ -64,7 +72,7 @@ import { StyleSheet,
     logoTextStyle:{
         fontSize:20,
         textAlign: 'center',
-        color: "#000"
+        color: colors.white,
     }
   
   });
